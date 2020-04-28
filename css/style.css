@@ -19,7 +19,7 @@ header{
     width: 100%;
     background-color: white;
     padding:0 10px 0 10px;
-
+    z-index : 99999;
 }
 .nav-menu, .nav-logo img{
     height: 100%;
@@ -76,6 +76,11 @@ main {
     padding : 76px 28px 0;
     display : grid;
     grid-template-columns: auto 402px;
+    grid-template-rows : repeat(auto);
+}
+
+.video-section {
+    grid-row: auto / 1;
 }
 
 .video-section .video-title {
@@ -92,7 +97,7 @@ main {
     font-size : 14px;
 }
 
-.video-section .video-description {
+.video-section .video-description, .video-section .video-details {
     border-bottom : 1px solid rgba(0, 0, 0, 0.2);
 }
 .video-section .video-rating {
@@ -163,27 +168,21 @@ main {
 
 
 button.subscribe {
-    font-family : Roboto, sans-serif;
-    padding : 10px 16px;
     background : #CC0000;
-    color : white;
-    text-transform : uppercase;
-    border : none;
-    font-weight : bold;
-    cursor : pointer;
-    border-radius : 3px;
-    font-size : 15px;
 }
+
+
 /*aside section*/
 aside{
     display: grid;
     margin-left: 24px;
-    
+
+    grid-row: auto / span 4;
  }
 aside .top-container{
     padding: 2px;
     justify-content: space-between;
-  
+
 }
 
 aside .top-container p {
@@ -191,13 +190,13 @@ aside .top-container p {
     font-size: 16px;
     text-transform: capitalize;
     margin-top:24px;
-     
-} 
+
+}
 .autoplay{
     text-transform: uppercase;
     font-family : Roboto,Ariel, sans-serif;
     font-size: 13px;
-}  
+}
 .top-container .material-icons{
     font-size: 36px;
 }
@@ -210,29 +209,29 @@ aside .aside-img{
     gap: 16px;
     margin:0px 0px 8px;
     cursor: pointer;
-  
+
 }
 aside .aside-img .aside-description{
     font-size: 14px;
     font-family:Roboto, Arial, sans-serif;
-    
+
 }
 aside .aside-img .aside-description, .aside-sub_description, .video-views{
     font-size: 13px;
     font-family:Roboto, Arial, sans-serif;
-    
+
 }
 aside .aside-img .main-image{
     min-width : 0;
     /* width : 50%;
     overflow: hidden; */
-      
+
 }
 aside .aside-img .main-image img {
     width : 100%;
 }
 aside .show-more {
-	width: 100%;
+	/* width: 100%; */
 	background: #d3d3d3;
 	color: #808080;
 	font-size: 0.75em;
@@ -245,6 +244,68 @@ aside .show-more a {
 	text-decoration: none;
 	color: gray;
 }
+
+/* Comments section */
+
+.comments-section .comments-section-heading {
+    padding : 22px 0;
+}
+.comments-section .comments-section-heading div:nth-child(2) {
+    margin-left : 16px;
+    text-transform: uppercase;
+    cursor : pointer;
+    font-size : 14px;
+}
+
+.comments-section .comments-section-heading div:nth-child(2) .material-icons {
+    margin-right : 8px;
+}
+
+.comments-section .comment-author-avatar {
+    width : 40px;
+}
+
+.comments-section .comments-add-comment, .comments-section .user-comment {
+    display : grid;
+    grid-template-columns: 56px auto;
+    gap : 4px;
+    grid-gap : 16px;
+    margin-bottom : 22px;
+}
+
+.comments-section .comments-add-comment .form-actions {
+    margin-top : 6px;
+}
+
+.comments-section .user-comment {
+    font-size : 14px;
+}
+.comments-section .user-comment p {
+    margin : 8px 0;
+}
+.comments-section .user-comment .comment-actions, .comments-section .user-comment .material-icons {
+    font-size : 16px;
+}
+.comments-section .user-comment .comment-actions > div {
+    margin-right : 12px;
+    font-size : 12px;
+}
+
+.comments-section .user-comment .comment-actions .material-button {
+    font-size : 12px;
+    padding : 6px 10px;
+    background : transparent;
+    color : #757575;
+}
+.comments-section .user-comment .comment-extra {
+    margin-top : 8px;
+}
+.comments-section .user-comment .comment-view-replies {
+    color : #065FD4;
+    cursor : pointer;
+    font-size : 14px;
+}
+
 /* Helper classes */
 
 .washed-out {
@@ -255,7 +316,44 @@ aside .show-more a {
 .flex { display : flex; }
 .flex.space-between { justify-content : space-between }
 .flex.align-center { align-items : center }
+.flex.justify-end { justify-content : flex-end }
+.rounded-img {
+    border-radius : 50%;
+    overflow : hidden;
+}
 
+.material-input {
+    background : transparent;
+    border : none;
+    outline : 0;
+    border-bottom : 1px solid grey;
+    width : 100%;
+    padding : 6px 0;
+    font-size : 14px;
+}
+
+.material-input:focus {
+    border-bottom : 2px solid rgba(0, 0, 0, 0.8);
+}
+
+.material-button {
+    font-family : Roboto, sans-serif;
+    padding : 10px 16px;
+    color : white;
+    text-transform : uppercase;
+    border : none;
+    background : #065FD4;
+    font-weight : bold;
+    cursor : pointer;
+    border-radius : 3px;
+    font-size : 15px;
+}
+
+/* Global rules */
+img {
+
+    width : 100%;
+}
 
 /* Media Queries */
 
@@ -264,16 +362,20 @@ aside .show-more a {
    .top-nav form {
         display: none;
     }
-    aside{
-        grid-row: auto / span 2;
-        margin-left: 0;
-    }
 }
 
 
 @media (max-width : 1100px) {
-
     main {
         grid-template-columns : 100%;
+    }
+
+    aside {
+        margin-left: 0;
+    }
+
+
+    aside .aside-img {
+        grid-template-columns: minmax(164px, 1fr) 4fr;
     }
 }
