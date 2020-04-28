@@ -3,9 +3,10 @@
     <head>
         <title>Youtube</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=0.6"> 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     </head>
     <body>
         <div class="top-nav">
@@ -21,7 +22,7 @@
                 <div class="search-bar">
                     <form>
                         <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <button type="submit"><span class="material-icons">search</span></button>
                     </form>
                 </div>
                 <div class="wrapper header-icons">
@@ -40,5 +41,63 @@
                 </div>
             </header>
         </div>
+        <main>
+            <div class="video-section">
+                <video controls>
+                    <source src="assets/video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-info">
+                    <h3 class="video-title">Feint - Reprise</h3>
+                    <div class="video-description flex space-between">
+                        <div class="video-views washed-out">1,724,408 views • Feb 23, 2011</div>
+                        <div class="video-actions flex washed-out">
+                            <div class="video-rating flex">
+                                <div class="video-rating-section flex align-center">
+                                    <span class="material-icons video-rating-icon">thumb_up_alt</span>
+                                    <span class="video-rating-count">13K</span>
+                                </div>
+                                <div class="video-rating-section flex align-center">
+                                    <span class="material-icons video-rating-icon">thumb_down_alt</span>
+                                    <span class="video-rating-count">133</span>
+                                </div>
+                                <div class="video-rating-progress">
+                                    <div class="video-rating-progress-inner" style="width : 96%"></div>
+                                </div>
+                            </div>
+                            <div class="video-action flex align-center">
+                                <span class="material-icons share-icon video-rating-icon">reply</span>
+                                <span>Share</span>
+                            </div>
+                            <div class="video-action flex align-center">
+                                <span class="material-icons video-rating-icon">playlist_add</span>
+                                <span>Save</span>
+                            </div>
+                            <div class="video-action flex align-center">
+                                <span class="material-icons video-rating-icon">more_horiz</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <div class="author-icon-section"><img src="https://yt3.ggpht.com/a-/AOh14GgIkkhJgfYBZwHqbxkPU5PB-53LJGUYzuAVSpJygw=s48-c-k-c0xffffffff-no-nd-rj"></div>
+                        <div class="details-section">
+                            <div class="author-name bold">Feint</div>
+                            <div class="subscribers-count washed-out">221K subscribers</div>
+                            <div class="description">
+                                ~one more time //
+
+                                The VIP mix of this track is now signed to DLA Black, go check it out! April 16th release (:
+                            </div>
+                        </div>
+                        <div class="action-buttons-section">
+                            <button class="subscribe">subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+
+            </div>
+        </main>
     </body>
 </html>
