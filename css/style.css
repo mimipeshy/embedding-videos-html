@@ -1,7 +1,11 @@
 body{
     font-family: 'Roboto', sans-serif;
     margin : 0;
+    background : #F9F9F9;
 }
+
+
+/* Header Section */
 .top-nav{
     width: 100%;
     height: 100%;
@@ -15,7 +19,7 @@ header{
     width: 100%;
     background-color: white;
     padding:0 10px 0 10px;
-    
+
 }
 .nav-menu, .nav-logo img{
     height: 100%;
@@ -47,7 +51,10 @@ header{
     background: #dbdbdb;
     width: 65px;
     border: none;
-    color:grey;    
+    color:grey;
+}
+.search-bar button .material-icons {
+    font-size : 20px;
 }
 .yt-video, .yt-grid , .yt-bell, .prof-picture img{
     height: 100%;
@@ -59,8 +66,140 @@ header{
 .header-icons{
     margin-right: 24px;
 }
-@media (max-width:900px){
+
+
+/* Video section */
+
+main {
+    max-width : 2000px;
+    margin : 0 auto;
+    padding : 76px 28px 0;
+    display : grid;
+    grid-template-columns: auto 402px;
+}
+
+.video-section .video-title {
+    font-weight : normal;
+    margin : 15px 0;
+}
+
+.video-section video {
+    width : 100%;
+    max-width : 100%;
+}
+
+.video-section .video-views {
+    font-size : 14px;
+}
+
+.video-section .video-description {
+    border-bottom : 1px solid rgba(0, 0, 0, 0.2);
+}
+.video-section .video-rating {
+    position : relative;
+    padding : 0 8px;
+}
+.video-section .video-description .video-rating-section {
+    font-size : 12px;
+    font-weight : bold;
+}
+
+.video-section .video-description .video-rating-icon {
+    margin-right : 8px;
+}
+.video-section .video-description .video-rating-section + .video-rating-section {
+    margin-left : 22px;
+}
+.video-section .video-description .video-rating-progress {
+    position : absolute;
+    bottom : 0;
+    left : 0;
+    width : 100%;
+    height : 3px;
+    background : #d3d3d3;
+}
+.video-section .video-description .video-rating-progress .video-rating-progress-inner {
+    height : 100%;
+    background : #919191;
+}
+.video-section .video-description .video-actions > div {
+    margin : 0 10px;
+    padding-bottom : 14px;
+    font-size : 12px;
+    text-transform: uppercase;
+    font-weight : bold;
+    cursor : pointer;
+}
+.video-section .video-details {
+    display : grid;
+    grid-template-columns:max-content auto max-content;
+    grid-gap : 20px;
+    padding : 20px 0;
+}
+.video-section .video-details .author-icon-section img {
+    border-radius : 50%;
+    overflow : hidden;
+}
+
+.video-section .video-details .details-section {
+    padding : 8px 0;
+}
+
+.video-section .video-details .subscribers-count {
+    font-size : 12px;
+    margin-top : 4px;
+}
+
+.video-section .video-details .description {
+    margin-top : 20px;
+    font-size : 14px;
+
+}
+
+.share-icon {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+button.subscribe {
+    font-family : Roboto, sans-serif;
+    padding : 10px 16px;
+    background : #CC0000;
+    color : white;
+    text-transform : uppercase;
+    border : none;
+    font-weight : bold;
+    cursor : pointer;
+    border-radius : 3px;
+    font-size : 15px;
+}
+
+/* Helper classes */
+
+.washed-out {
+    color : #757575;
+}
+
+.bold { font-weight : bold; }
+.flex { display : flex; }
+.flex.space-between { justify-content : space-between }
+.flex.align-center { align-items : center }
+
+
+/* Media Queries */
+
+
+@media (max-width:900px) {
    .top-nav form {
         display: none;
+    }
+}
+
+
+@media (max-width : 1100px) {
+
+    main {
+        grid-template-columns : auto auto;
     }
 }
