@@ -67,6 +67,10 @@ header{
     margin-right: 24px;
 }
 
+header img {
+    width : auto;
+}
+
 
 /* Video section */
 
@@ -88,9 +92,19 @@ main {
     margin : 15px 0;
 }
 
-.video-section video {
+.video-section .video-wrapper {
     width : 100%;
-    max-width : 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-section .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .video-section .video-views {
