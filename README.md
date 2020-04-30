@@ -1,6 +1,4 @@
-# Project Name
-
-> A youtube clone
+# Youtube's Video Page Clone
 
 ![screenshot](./app_screenshot.png)
 
